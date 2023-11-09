@@ -1,0 +1,64 @@
+{% extends 'basecustform.html' %}
+{% block title%}Exterior{% endblock title%}
+{% block currentuser%}{{current_user.Fname}} {{current_user.Lname}}{% endblock currentuser%}
+{% block body%} 
+
+<header>
+    <div class="text-box" style="margin-bottom: 11px; background-color: rgba(106, 160, 244, 0.8); padding: 11px; width: 100%;">
+      <h3 id="title"><center> EXTERIOR PAINT</center></h3><hr style="height: 4px; opacity: .75; background-color: black;">     
+    </div>
+</header>
+
+<table id="customers">
+    <tr>
+      <th>Pcode</th>  
+      <th>Paint color</th>
+      <th>Paint Type</th>
+      <th>Price</th>   
+      <th>Quantity</th>
+      <th>Mfr_date</th>
+      <th>Exp_date</th>
+      
+
+      {% for row in results %}
+    </tr>
+    <tr>
+      <td>{{row.pcode}}</td>
+      <td>{{row.paint_colour}}</td>
+      <td>{{row.paint_type}}</td>
+      <td>{{row.price}}</td>
+      <td>{{row.quantity}}</td>
+      <td>{{row.mfr_date}}</td>
+      <td>{{row.exp_date}}</td>     
+    </tr>
+   {% endfor %}   
+  </table>
+
+  <style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      color: rgb(0, 0, 0);
+      font-size: 1.1rem;
+    }
+    
+    #customers td, #customers th {
+      border: 2px solid rgb(20, 4, 4);
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(odd){background-color: hsl(0, 4%, 86%);}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+     
+    }
+    </style>
+{% endblock body%}

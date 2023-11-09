@@ -1,0 +1,65 @@
+{% extends 'basecustform.html' %}
+{% block title%}Order History{% endblock title%}
+{% block currentuser%}{{current_user.Fname}} {{current_user.Lname}}{% endblock currentuser%}
+{% block body%} 
+
+<header>
+    <div class="text-box" style="margin-bottom: 11px; background-color: rgba(106, 160, 244, 0.8); padding: 11px; width: 100%;">
+      <h3 id="title"><center>ORDER HISTORY OF {{current_user.Fname}} {{current_user.Lname}}</center></h3><hr style="height: 4px; opacity: .75; background-color: black;">     
+    </div>
+</header>
+
+<table id="customers">
+    <tr>
+      <th>Order_id</th> 
+      <th>Pcode</th>  
+      <th>Paint_color</th>
+      <th>Paint_Type</th>
+         
+      <th>Quantity_ordered</th>
+      <th>Total_amount</th>
+      <th>Transaction_time</th>
+      
+      
+
+      {% for row in result %}
+    <tr>
+      <td>{{row.Orders.oid}}</td>
+      <td>{{row.Orders.pcode}}</td>
+      <td>{{row.Product.paint_colour}}</td>
+      <td>{{row.Product.paint_type}}</td>
+      <td>{{row.Orders.quantity}}</td>
+      <td>{{row.Orders.total_amount}}</td>
+      <td>{{row.Orders.date}}</td>
+    </tr>
+    {% endfor %}  
+  </table>
+
+  <style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      color: rgb(0, 0, 0);
+      font-size: 1.1rem;
+    }
+    
+    #customers td, #customers th {
+      border: 2px solid rgb(20, 4, 4);
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(odd){background-color: hsl(0, 4%, 86%);}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+     
+    }
+    </style>
+{% endblock body%}

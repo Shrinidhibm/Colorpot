@@ -1,0 +1,73 @@
+{% extends 'basegetform.html' %}
+{% block title%}Delete Customer{% endblock title%}
+<!-- {% block head %}<link href="static\css\addform.css" rel="stylesheet">{% endblock head %} -->
+{% block body%} 
+<header>
+  <div class="text-box" style="margin-bottom: 11px; background-color: rgba(106, 160, 244, 0.8); padding: 11px; width: 100%;">
+    <h3 id="title"><center>Delete Customer</center></h3><hr style="height: 5px; opacity: .75; background-color: black;">     
+  </div>
+</header>
+<table id="customers">
+    <tr>
+      <th>Customer_id</th>  
+      <th>First_Name</th>
+      <th>Last_name</th>
+      <th>Email</th>   
+      <th>Mobile</th>
+      <th>Action</th>
+
+      {% for row in customers %}
+    </tr>
+
+    <tr>
+      <td>{{row.id}}</td>
+      <td>{{row.Fname}}</td>
+      <td>{{row.Lname}}</td>
+      <td>{{row.Email}}</td>
+      <td>{{row.Mobile}}</td>
+      <!-- <td><a href="" class="btn btn-danger btn-xs" data-toggle="model" data-target="modaledit">Edit</a></td> -->
+      <td><a href="/delcustdata/{{row.id}}" class="btn btn-danger btn-xs"  style="width: 100%; margin: 1px;" onclick="return confirm('Are you sure to Delete ?')">Delete</a></td>
+    </tr>
+
+
+    
+
+    {% endfor %}
+  </table>
+
+
+  <style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      color: rgb(0, 0, 0);
+      font-size: 1.1rem;
+    }
+    
+    #customers td, #customers th {
+      border: 2px solid rgb(20, 4, 4);
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(odd){background-color: hsl(0, 4%, 86%);}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+     
+    }
+    </style>
+  
+  
+  
+
+
+
+
+{% endblock body%}

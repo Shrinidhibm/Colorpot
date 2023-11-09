@@ -1,0 +1,174 @@
+{% extends 'basegetform.html' %}
+{% block title%}Update Worker{% endblock title%}
+{% block head %}
+
+
+
+{% endblock head %}
+{% block body%} 
+
+
+<div class="container register-form" >  
+  <form action="/updateworker" method="POST" >
+  <div class="form">  
+      <div class="note"></div>  
+      <div class="form-content">  
+          <div class="row">  
+              <div class="col-md-6">  
+                <div class="input-tab" style="border-right-style: solid;padding-bottom: 1px;border-bottom-width: 7px;border-bottom-style: solid;border-top-width: 7px;border-top-style: solid;/*! border-radius: 5rem; */border-right-width: 10px;border-left-width: 10px;border-left-style: solid;padding-left: 1px;padding-right: 1px;padding-top: 1px;color: #c0c0c086; ">
+                  <select id="dropdown" style="width: 100%;" name="id" required autofocus>
+                    <option disabled value selected>Choose Worker ID</option>
+                    {% for row in workers %}
+                    <option value="{{row.w_id}}">{{row.w_id}}</option>
+                    
+                    {% endfor %}
+                  </select>
+                  </div>    
+
+                  
+                  <div><h1></h1></div> 
+                  <div class="form-group">  
+                      <input class="form-control" type="number"  id="age" placeholder="age" name="age">  
+                  </div>  
+                  <div><h1></h1></div> 
+                  <div class="form-group">  
+                    <input class="form-control" type="text"  id="location" placeholder="Location" name="location">  
+                </div>  
+              </div>              
+              <div class="col-md-6">  
+                  <div class="form-group">                  
+                    <input type="text" class="form-control" placeholder="Enter Name" name="name"/>  
+                </div> 
+                  <div><h1></h1></div> 
+                  <div class="form-group">  
+                      <input type="text" class="form-control" placeholder="Gender" name="gender"/>  
+                  </div>  
+                  <div><h1></h1></div> 
+                  <div class="form-group">  
+                    <input type="text" class="form-control" placeholder="Address" name="address"/>  
+                </div>  
+              </div>  
+
+
+              
+          </div>  
+         
+<div class="row justify-content-start mt-4">  
+  <div class="col">  
+        <button type="submit" class="btnSubmit"><b>UPDATE</b> </button>  
+      </div>  
+  </div>  
+</form>
+</div>  
+    
+
+
+<table id="customers">
+  <tr>
+    <th>Worker_id</th>
+    <th>Name</th>
+    <th>Age</th>     
+    <th>Gender</th>
+    <th>Contact</th>
+    <th>location</th>
+    <th>Address</th>
+
+    {% for row in workers %}
+  </tr>
+
+  <tr>
+    <td>{{row.w_id}}</td>
+    <td>{{row.name}}</td>
+    <td>{{row.age}}</td>
+    <td>{{row.gender}}</td>
+    <td>{{row.mobile}}</td>
+    <td>{{row.location}}</td>
+    <td>{{row.address}}</td>
+  </tr>
+
+
+  
+
+  {% endfor %}
+</table>
+
+  <style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      color: rgb(0, 0, 0);
+      font-size: 1.1rem;
+    }
+    
+    #customers td, #customers th {
+      border: 2px solid rgb(20, 4, 4);
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(odd){background-color: hsl(0, 4%, 86%);}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+     
+    }
+    </style>
+  
+  <style>  
+    .note  
+   {  
+       text-align: center;  
+       height: 20px;  
+       background: -webkit-linear-gradient(left, #0072ff, #8811c5);  
+       color: #fff;  
+       font-weight: bold;  
+       line-height: 80px;  
+       border: #000000;
+   }  
+   
+   .title {  
+     margin-top: 2rem;  
+     margin-bottom: 1rem;  
+   }  
+   .form-content  
+   {  
+       padding: 1.5%;  
+       border: 1px solid #8e9dc5;  
+       margin-bottom: 2%;  
+   }  
+   .form-control {  
+       border-radius: 2.5rem; 
+       
+       
+   }  
+   .btnSubmit  
+   {  
+       border: black;  
+       border-radius: 1rem;  
+       padding: 1%;  
+       width: 10%;  
+       cursor: pointer;  
+       background: #0062cc;  
+       color: #fff;  
+   }  
+   
+   a {  
+     text-decoration: none;  
+     color: #fff;  
+   }  
+   a:hover {  
+     text-decoration: none;  
+     color: #fff;  
+   }  
+     
+
+  </style>
+
+
+{% endblock body%}

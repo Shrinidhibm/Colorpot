@@ -1,0 +1,70 @@
+{% extends 'basegetform.html' %}
+{% block title%}Add worker{% endblock title%}
+{% block head %}<link href="static\css\addform.css" rel="stylesheet">{% endblock head %}
+{% block body%} 
+<header>
+    <div class="text-box" style="margin-bottom: 11px; background-color: rgba(106, 160, 244, 0.8); padding: 11px; width: 100%;">
+      <h3 id="title" style="font-size: 2.0rem;"><center>Add worker</center></h3><hr style="height: 5px; opacity: .75; background-color: black;">
+      
+    </div>                                                                                                                                                                                                                                                                                                                                             
+</header>
+      <div class="container" style="background-color: rgba(164, 181, 191, 0.7);">
+        <form action="/getworker" method="POST">
+  
+           <div class="labels" style="color: #000; ">
+            <label id="name-label" for="name">* Name</label></div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="name" name="name" placeholder="Enter name" required autofocus></div>
+  
+           
+          
+           <div class="labels"style="color: #000;">
+            <label id="number-label" for="number">* Age</label></div>
+          <div class="input-tab">
+            <input class="input-field" type="number" id="age" name="age" min="1" max="60" placeholder="18-60" required></div>
+  
+
+            
+           <div class="labels"style="color: #000;">
+            <label for="dropdown">Gender</label></div>
+          <div class="input-tab">
+            <select id="dropdown" name="gender">
+              <option disabled value selected>Select an option</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
+            </select>
+            </div>           
+            <div class="labels" style="color: #000;">
+              <label id="name-label" for="phone">* Phone number</label></div>
+            <div class="input-tab">
+              <input class="input-field" type="number" id="phone" name="phone" placeholder="Enter Phone numner" required autofocus></div>
+          <div class="labels"style="color: #000;">
+            <label id="name-label" for="location">* Location</label></div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="location" name="location" placeholder="Enter Location" required autofocus></div>
+
+          <div class="labels"style="color: #000;">
+            <label for="address">Address</label></div>
+          <div class="input-tab">
+            <textarea class="input-field" id="address" name="address" rows="3" cols="40" placeholder="Your Address..."></textarea></div>
+          
+          <div class="btn">
+            <button id="submit" type="submit">Submit</button>
+          </div>
+          
+        </form>
+      </div>
+  
+
+  <!-- css file -->
+ 
+ 
+  
+  
+  
+
+
+
+
+{% endblock body%}

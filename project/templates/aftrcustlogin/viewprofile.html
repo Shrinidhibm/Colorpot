@@ -1,0 +1,27 @@
+{% extends 'basecustform.html' %}
+{% block title%}Profile{% endblock title%}
+{% block currentuser%}{{current_user.Fname}} {{current_user.Lname}}{% endblock currentuser%}
+{% block body%} 
+<div class="text-box" style="margin-bottom: 81px; background-color: rgba(239, 144, 144, 0.77); padding: 11px; width: 100%;">
+    <h2 id="title" style="font-family:Copperplate;"><center><b>User profile</b></center></h2><hr style="height: 4px; opacity: .75; background-color: black;">     
+  </div>
+  
+  <div style="border-top-width: 10px;border-top-style: solid;padding-top: 50px;border-right-width: 8px;border-right-style: solid;border-left-width: 8px;border-left-style: solid;border-bottom-style: solid;border-bottom-width: 0px; margin-bottom: 8px;"></div>
+ 
+<div style=" width: 80%; border-top-width: 2px;border-top-style: solid;border-right-width: 2px;border-right-style: solid;border-bottom-width: 2px;border-bottom-style: solid;border-left-width: 4px;border-left-style: solid;">
+  <div class="container" style="background-color: rgba(94, 172, 218, 0.7); ">
+<h2 style="">Name: {{current_user.Fname}} {{current_user.Lname}}</h2>
+</div>
+   
+<div class="container" style="background-color: rgba(147, 191, 218, 0.7); ">
+    <h2 style="font-family:serif;">Email: {{current_user.Email}}</h2>
+    </div>
+
+    <div class="container" style="background-color: rgba(182, 206, 224, 0.6); ">
+        <h2 style="font-family:serif;">Phone no: {{current_user.Mobile}}</h2>
+        </div>
+</div>
+        <div style="border-bottom-width: 10px;border-bottom-style: solid;border-right-width: 8px;border-right-style: solid;border-left-width: 8px;border-left-style: solid;padding-bottom: 50px; margin-top: 8px;"></div>
+       
+
+{% endblock body%}

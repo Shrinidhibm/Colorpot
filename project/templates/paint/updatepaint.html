@@ -1,0 +1,173 @@
+{% extends 'basegetform.html' %}
+{% block title%}Update Paint{% endblock title%}
+{% block head %}
+
+
+
+{% endblock head %}
+{% block body%} 
+<header style="padding-left: 2px;padding-right: 2px;">
+  <div class="text-box" style="margin-bottom: 11px; background-color: rgba(194, 218, 255, 0.8); padding: 10px; width: 100%;padding-bottom: 7px;">
+    <h3 id="title" style="font-family:Copperplate;"><center>Update Paint</center></h3><hr style="height: 5px; opacity: .75; background-color: black;">     
+  </div>
+</header>
+
+<div class="container register-form" style="border-left-style: solid;border-left-width: 0px;padding-left: 90px;padding-right: 90px; ">  
+  <form action="/updtpint" method="POST" >
+  <div class="form">  
+      <div class="note"></div>  
+      <div class="form-content" style="padding: 1.5%;  border: 2px solid #000;    margin-bottom: 2%;">  
+          <div class="row">  
+              <div class="col-md-6">  
+                <div class="input-tab" style="border-right-style: solid;padding-bottom: 5px;border-bottom-width: 5px;border-bottom-style: solid;border-top-width: 5px;border-top-style: solid;/*! border-radius: 100; */border-left-style: solid;padding-right: 5px;padding-top: 5px;color: #b4aabc; border-radius: 2rem; padding-left: 5px;border-left-width: 5px;border-right-width: 5px;">
+                  <select id="dropdown" style="width: 100%;margin-left: 0px;margin-right: 0px;border-radius: 15px;align-items: center;align-content: center;align-self: center;text-align-last: center;" name="pcode" required autofocus>
+                    <option disabled value selected>Select Pcode</option>
+                    {% for row in products %}
+                    <option value="{{row.pcode}}">{{row.pcode}}</option>
+                    
+                    {% endfor %}
+                  </select>
+                  </div>    
+
+                  
+                  <div style="padding-top: 20px;"><h1></h1></div> 
+                  <div class="form-group">  
+                      <input class="form-control" type="text"  id="paintcolour" placeholder="Paint Colour*" name="Paintcolour">  
+                  </div>  
+              </div>              
+              <div class="col-md-6">  
+                  <div class="form-group">                  
+                    <input type="number" class="form-control" placeholder="Price*" name="Price"/>  
+                </div> 
+                  <div style="padding-top: 25px;"><h1></h1></div> 
+                  <div class="form-group">  
+                      <input type="number" class="form-control" placeholder="Quantity*" min="1" name="Quantity"/>  
+                  </div>  
+              </div>  
+          </div>  
+         
+<div class="row justify-content-start mt-4">  
+  <div class="col">  
+        <button type="submit" class="btnSubmit"><b>UPDATE</b> </button>  
+      </div>  
+  </div>  
+</form>
+</div>  
+    
+
+
+<table id="customers">
+    <tr style="padding-left: 12px;padding-right: 12px;">
+      <th >Pcode</th>  
+      <th>Paint color</th>
+      <th>Paint Type</th>
+      <th>Price</th>   
+      <th>Quantity</th>
+      <th>Mfr_date</th>
+      <th>Exp_date</th>
+      <!-- <th>Action</th> -->
+
+      {% for row in products %}
+    </tr>
+
+    <tr>
+      <td>{{row.pcode}}</td>
+      <td>{{row.paint_colour}}</td>
+      <td>{{row.paint_type}}</td>
+      <td>{{row.price}}</td>
+      <td>{{row.quantity}}</td>
+      <td>{{row.mfr_date}}</td>
+      <td>{{row.exp_date}}</td>
+      <!-- <td><a href="/updatepaint/{{row.pcode}}"  class="btn btn-warning btn-xs"  style="width: 100%; margin: 1px;" data-toggle="modal"  data-target="#modaledit{{row.pcode}}">EDIT</a></td> -->
+    </tr>
+    {% endfor %}
+
+    
+   
+  </table>
+
+  <style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      color: rgb(0, 0, 0);
+      font-size: 1.1rem;
+    }
+    
+    #customers td, #customers th {
+      border: 1px solid rgb(20, 4, 4);
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(odd){background-color: hsl(0, 4%, 86%);}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #218C9E;
+      color: white;
+     
+    }
+    </style>
+  
+  <style>  
+    .note  
+   {  
+       text-align: center;  
+       height: 20px;  
+       background: -webkit-linear-gradient(left, #0072ff, #8811c5);  
+       color: #fff;  
+       font-weight: bold;  
+       line-height: 80px;  
+       border: #000000;
+   }  
+   
+   .title {  
+     margin-top: 2rem;  
+     margin-bottom: 1rem;  
+   }  
+   .form-content  
+   {  
+       padding: 1.5%;  
+       border: 1px solid #8e9dc5;  
+       margin-bottom: 2%;  
+       
+   }  
+   .form-control {  
+      
+       border-radius: 2.5rem; 
+       color: #000;
+       
+   }  
+   .form-control::placeholder {
+    color: black;
+  }
+   .btnSubmit  
+   {  
+       border: none;  
+       border-radius: 1.5rem;  
+       padding: 1%;  
+       width: 10%;  
+       cursor: pointer;  
+       background: #0062cc;  
+       color: #fff;  
+   }  
+   
+   a {  
+     text-decoration: none;  
+     color: #fff;  
+   }  
+   a:hover {  
+     text-decoration: none;  
+     color: #fff;  
+   }  
+     
+         </style>
+  
+
+
+{% endblock body%}

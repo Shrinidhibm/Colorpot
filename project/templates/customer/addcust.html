@@ -1,0 +1,61 @@
+{% extends 'basegetform.html' %}
+{% block title%}Add Customer{% endblock title%}
+{% block head %}<link href="static\css\addform.css" rel="stylesheet">{% endblock head %}
+{% block body%} 
+<header>
+    <div class="text-box" style="margin-bottom: 11px; background-color: rgba(106, 160, 244, 0.8); padding: 11px; width: 100%;">
+      <h3 id="title"><center>Add New Customer</center></h3><hr style="height: 5px; opacity: .75; background-color: black;">     
+    </div>
+</header>
+      <div class="container" style="background-color: rgba(164, 181, 191, 0.7);">
+        <form action="/custadd" method="POST">
+  
+           <div class="labels" style="color: #000;">
+            <label id="name-label" for="first_name">* First name</label></div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="first_name" name="first_name" placeholder="Enter First Name" required autofocus></div>
+  
+            <div class="labels" style="color: #000;">
+                <label id="name-label" for="last_name">* Last name</label></div>
+              <div class="input-tab">
+                <input class="input-field" type="text" id="last_name" name="last_name" placeholder="Enter Last Name" required autofocus></div>
+          
+                <div class="labels" style="color: #000;">
+                    <label id="email-label" for="email">* Email</label></div>
+                  <div class="input-tab">
+                    <input class="input-field" type="email" id="email" name="email" placeholder="email@email.com" required></div>
+          
+                    <div class="labels" style="color: #000;">
+                        <label id="name-label" for="phone">* Phone number</label></div>
+                      <div class="input-tab">
+                        <input class="input-field" type="tel" id="phone" name="phone" placeholder="Enter Phone numner" required autofocus></div>
+
+
+                    <div class="labels" style="color: #000;">
+            <label id="number-label" for="date_b">* Enter DOB</label></div>
+          <div class="input-tab">
+            <input class="input-field" type="date" id="date_b" name="date_b" placeholder="" required autofocus></div>
+  
+
+          
+          
+          
+          <div class="btn">
+            <button id="submit" type="submit">Submit</button>
+          </div>
+          
+        </form>
+      </div>
+  
+
+  <!-- css file -->
+ 
+ 
+  
+  
+  
+
+
+
+
+{% endblock body%}

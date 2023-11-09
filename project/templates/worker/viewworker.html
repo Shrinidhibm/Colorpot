@@ -1,0 +1,73 @@
+{% extends 'basegetform.html' %}
+{% block title%}Delete worker{% endblock title%}
+{% block head %}<link href="static\css\addform.css" rel="stylesheet">{% endblock head %}
+{% block body%} 
+<div class="text-box" style="margin-bottom: 11px; background-color: rgba(106, 160, 244, 0.8); padding: 11px; width: 100%;">
+  <h2 id="title" style="font-family:Copperplate;"><b><center>WORKERS AVAILABLE</center></b></h2><hr style="height: 5px; opacity: .75; background-color: black;">
+</div>
+<h1></h1>
+<table id="customers">
+    <tr>
+      <th>Worker_id</th>
+      <th>Name</th>
+      <th>Age</th>     
+      <th>Gender</th>
+      <th>Contact</th>
+      <th>location</th>
+      <th>Address</th>
+
+      {% for row in workers %}
+    </tr>
+
+    <tr>
+      <td>{{row.w_id}}</td>
+      <td>{{row.name}}</td>
+      <td>{{row.age}}</td>
+      <td>{{row.gender}}</td>
+      <td>{{row.mobile}}</td>
+      <td>{{row.location}}</td>
+      <td>{{row.address}}</td>
+    </tr>
+
+
+    
+
+    {% endfor %}
+  </table>
+
+
+  <style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      color: rgb(0, 0, 0);
+      font-size: 1.1rem;
+    }
+    
+    #customers td, #customers th {
+      border: 2px solid rgb(20, 4, 4);
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(odd){background-color: hsl(0, 4%, 86%);}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+     
+    }
+    </style>
+  
+  
+  
+
+
+
+
+{% endblock body%}

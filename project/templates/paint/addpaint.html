@@ -1,0 +1,77 @@
+{% extends 'basegetform.html' %}
+{% block title%}Add Paint{% endblock title%}
+{% block head %}<link href="static\css\addform.css" rel="stylesheet">{% endblock head %}
+{% block body%} 
+<header>
+    <div class="text-box" style="margin-bottom: 11px; background-color: rgba(106, 160, 244, 0.8); padding: 11px; width: 100%;">
+      <h3 id="title" style="font-family:Copperplate;"><center>Add New Paint</center></h3><hr style="height: 5px; opacity: .75; background-color: black;">     
+    </div>
+</header>
+      <div class="container" style="background-color: rgba(164, 181, 191, 0.7); ">
+        <form action="/getpaint" method="POST">
+  
+           <div class="labels" style="color: #000;">
+            <label id="name-label" for="paintcode">* Paint code</label></div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="paintcode" name="paintcode" placeholder="Enter paint code in Capitals" required autofocus></div>
+  
+           
+          
+           <div class="labels" style="color: #000;">
+            <label id="number-label" for="pcolour">* Enter colour</label></div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="pcolor" name="paintcolour" placeholder="Enter paint colour" required autofocus></div>
+  
+
+            
+           <div class="labels" style="color: #000;">
+            <label for="dropdown">Paint type</label></div>
+          <div class="input-tab">
+            <select id="dropdown" name="ptype" required autofocus>
+              <option disabled value selected>Select an option</option>
+              <option value="interior">Interior</option>
+              <option value="exterior">Exterior</option>
+            </select>
+            </div>           
+          
+          <div class="labels" style="color: #000;">
+            <label id="name-label" for="price">* Price</label></div>
+          <div class="input-tab">
+            <input class="input-field" type="text" id="price" name="price" placeholder="Enter Price" required autofocus></div>
+
+            
+            <div class="labels" style="color: #000;">
+                <label id="number-label" for="quantity">* Quantity </label></div>
+              <div class="input-tab">
+                <input class="input-field" type="number" id="quantity" name="quantity" min="1" max="120" placeholder="In [Litre]" required></div>
+
+            <div class="labels" style="color: #000;">
+                 <label id="name-label" for="mfd">* Manufacture Date</label></div>
+                  <div class="input-tab">
+                    <input class="input-field" type="date" id="mfd" name="mfd" placeholder="" required autofocus></div>
+
+            <div class="labels" style="color: #000;">
+                 <label id="name-label" for="exp">* Expiry Date/label></div>
+                    <div class="input-tab">
+                    <input class="input-field" type="date" id="exp" name="exp" placeholder="" required autofocus></div>
+          
+          
+          <div class="btn">
+            <button id="submit" type="submit">Submit</button>
+          </div>
+          
+        </form>
+      </div>
+  
+
+  <!-- css file -->
+ 
+ 
+  
+  
+  
+
+
+
+
+{% endblock body%}

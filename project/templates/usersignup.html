@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="static/css/stylelogin.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="static/css/navv.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html lang="en">
+<head>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
+
+<body>
+
+  <div class="navbar" style="min-height: 100px; margin-bottom: 0px; border-radius: 1px;padding-bottom: 0px;padding-top: 0px;">	
+    <div class="logo">
+      <h2 style="font-size: 40px; margin-top: 25px; margin-bottom: 25px;">COLORPOT</h2>
+    </div>  
+    <ul class="links">
+      <li><a href="/">Home</a></li>
+      <li><a href="#">Product/Colours</a></li>
+      <li><a href="#">Calculator</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+    
+    
+    
+    
+    <!-- <div class="toggle">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div> -->
+    
+    
+  </div>
+<!-- navigation bar end-->
+<!--message flash start-->
+{% include 'message.html' %}
+
+
+
+<!--login page starts-->
+<div id="form">
+  
+  <div class="container" style="padding-top: 90px;">
+    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-md-8 col-md-offset-2">
+      <div id="userform">
+        <ul class="nav nav-tabs nav-justified" role="tablist">
+          <li class="active"><a href="#signup"  role="tab" data-toggle="tab">Sign up</a></li>
+          <li><a href="#login"  role="tab" data-toggle="tab">Log in</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade active in" id="signup">
+            <h3 class="text-uppercase text-center" style="padding-bottom: 20px;">Customer Sign Up</h3>
+
+            <form action="/signup" method="POST">
+              
+              <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                  <div class="form-group">
+                    <label>First Name<span class="req">*</span> </label>
+                    <input type="text" class="form-control" name="first_name" required data-validation-required-message="Please enter your name." autocomplete="off">
+                    <p class="help-block text-danger"></p>
+                  </div>
+
+                <script>
+                  const nameInput = document.querySelector('input[name="first_name"]');
+
+                  nameInput.addEventListener('change', (event) => {
+                      const name = event.target.value;
+                      const nameRegex = /^[A-Za-z]+$/;
+                      if (!nameRegex.test(name)) {
+                          alert('Please enter a valid name.');
+                          event.target.value = '';
+                      }
+                  });
+
+                </script>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                  <div class="form-group">
+                    <label> Last Name<span class="req">*</span> </label>
+                    <input type="text" class="form-control" name="last_name" required data-validation-required-message="Please enter your name." autocomplete="off">
+                    <p class="help-block text-danger"></p>
+                  </div>
+<script>
+  const lastNameInput = document.querySelector('input[name="last_name"]');
+  lastNameInput.addEventListener('change', (event) => {
+      const lastName = event.target.value;
+      const nameRegex = /^[A-Za-z]+$/;
+      if (!nameRegex.test(lastName)) {
+          alert('Please enter a valid last name.');
+          event.target.value = '';
+      }
+  });
+  
+
+</script>
+
+
+
+                </div>
+              </div>
+              <div class="form-group">
+                <label> Your Email<span class="req">*</span> </label>
+                <input type="email" class="form-control" name="email" required data-validation-required-message="Please enter your email address." autocomplete="off">
+                <p class="help-block text-danger"></p>
+              </div>
+<script>
+  const emailInput = document.querySelector('input[name="email"]');
+
+emailInput.addEventListener('change', (event) => {
+    const email = event.target.value;
+    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        event.target.value = '';
+    }
+});
+
+</script>
+              <div class="form-group">
+                <label> Your Phone<span class="req">*</span> </label>
+                <input type="tel" class="form-control" name="phone" required data-validation-required-message="Please enter your phone number." autocomplete="off">
+                <p class="help-block text-danger"></p>
+              </div>
+<script>
+  const phoneInput = document.querySelector('input[name="phone"]');
+phoneInput.addEventListener('change', (event) => {
+    const phoneNumber = event.target.value;
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(phoneNumber)) {
+        alert('Please enter a valid 10-digit phone number.');
+        event.target.value = '';
+    }
+});
+
+</script>
+
+
+
+
+
+
+              <div class="form-group">
+                <label><span class="req"></span> </label> 
+                <input type="date" class="form-control" name="date_b" required data-validation-required-message="Please enter your DOB" autocomplete="off">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="mrgn-30-top">
+                <button type="submit" value="submit" class="btn btn-larger btn-block"/>
+                Sign up
+                </button>
+              </div>
+            </form>
+          </div>
+
+
+          <div class="tab-pane fade in" id="login">
+            <h3 class="text-uppercase text-center" style="padding-bottom: 20px;">Customer Log In</h3>
+            <form action="/login" method="POST">
+              <div class="form-group">
+                <label> Your Email<span class="req">*</span> </label>
+                <input type="email" class="form-control" name="email" required data-validation-required-message="Please enter your email address." autocomplete="off">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group">
+                <label> <span class="req"></span> </label>
+                <input type="date" class="form-control" name="date_b" required data-validation-required-message="Please enter your password" autocomplete="off">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="mrgn-30-top">
+                <button type="submit" value="Submit" class="btn btn-larger btn-block"/>
+                Log in
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container --> 
+</div>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</body>
+<!-- partial -->
+  <script  src="static/js/scriptlogin.js"></script>
+  <script  src="static/js/navv.js"></script>
+
+  
+  
+  
+  
+  
+  
+  
+  
+</body>
+</html>

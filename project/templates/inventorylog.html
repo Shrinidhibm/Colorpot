@@ -1,0 +1,65 @@
+{% extends 'basegetform.html' %}
+{% block title%}Inventory log{% endblock title%}
+
+{% block body%} 
+  <div class="text-box" style="margin-bottom: 1px;">
+      <h2 id="title" style="font-family:Copperplate;"><b>Inventory History</b></h2><hr>
+      
+    </div>  
+<table id="customers">
+    <tr>
+      <th>Pcode</th>  
+      <th>Paint color</th>
+      <th>Paint Type</th>
+      <th>Price</th>   
+      <th>Quantity</th>  
+      <th>Status</th>
+      <th>Time_Stamp</th>
+      
+
+      {% for row in inven %}
+    </tr>
+    <tr>
+      <td>{{row.pcode}}</td>
+      <td>{{row.paint_colour}}</td>
+      <td>{{row.paint_type}}</td>
+      <td>{{row.price}}</td>
+      <td>{{row.quantity}}</td>
+      <td>{{row.Action }}</td>
+      <td>{{row.time_stamp}}</td>     
+    </tr>
+   {% endfor %}
+
+
+
+    
+  </table>
+
+  <style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      color: rgb(0, 0, 0);
+      font-size: 1.1rem;
+    }
+    
+    #customers td, #customers th {
+      border: 2px solid rgb(20, 4, 4);
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(odd){background-color: hsl(0, 4%, 86%);}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+     
+    }
+    </style>
+{% endblock body%}

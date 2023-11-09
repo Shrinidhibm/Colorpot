@@ -1,0 +1,12 @@
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-info alert-dismissible"  style="margin-bottom: 10px; color: #253137;background-color: #b4d1e1;border-color: #1f0202;" role="alert" align="center">
+     <h3 style="font-family: 'Times New Roman', Times, serif;">{{message}}</h3>
+      <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"> 
+        <span aria-hidden="true" style="font-size: 31px;font-weight: 70;line-height: 0;">&times;</span> 
+      </button> -->
+    </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}

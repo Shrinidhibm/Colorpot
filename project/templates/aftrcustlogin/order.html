@@ -1,0 +1,126 @@
+{% extends 'basecustform.html' %}
+{% block title%}Product{% endblock title%}
+{% block currentuser%}{{current_user.Fname}} {{current_user.Lname}}{% endblock currentuser%}
+{% block body%} 
+<header>
+    <div class="text-box" style="margin-bottom: 11px; background-color: rgba(106, 160, 244, 0.8); padding: 11px; width: 100%;">
+      <h3 id="title"><center>BUY PRODUCT</center></h3><hr style="height: 4px; opacity: .75; background-color: black;">     
+    </div>
+</header>
+
+<table id="customers">
+    <tr>
+      <th>Pcode</th>  
+      <th>Paint color</th>
+      <th>Paint Type</th>
+      <th>Price</th>   
+      <th>Quantity</th>
+      <th>Mfr_date</th>
+      <th>Exp_date</th>
+      <th>Action</th>
+
+      {% for row in products %}
+    </tr>
+
+    <tr>
+      <td>{{row.pcode}}</td>
+      <td>{{row.paint_colour}}</td>
+      <td>{{row.paint_type}}</td>
+      <td>{{row.price}}</td>
+      <td>{{row.quantity}}</td>
+      <td>{{row.mfr_date}}</td>
+      <td>{{row.exp_date}}</td>
+      <!-- <td><a href="" class="btn btn-danger btn-xs" data-toggle="model" data-target="modaledit">Edit</a></td> -->
+      <td><a href="/delpaintdata/{{row.pcode}}" class="btn btn-danger btn-xs"  style="width: 100%; margin: 1px;" onclick="return confirm('Are you sure to Delete ?')">Delete</a></td>
+    </tr>
+
+
+    
+
+    {% endfor %}
+  </table>
+
+   
+
+
+
+
+
+
+
+
+
+
+   <style>
+    .ct{
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom right, #E3F0FF, #FAFCFF);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+       .Cart-Container{
+        width: 70%;
+        height: 85%;
+        background-color: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0px 25px 40px #1687d933;
+       }
+
+       .Headerr{
+        margin: auto;
+        width: 90%;
+        height: 15%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       }
+       .Headingg{
+        font-size: 20px;
+        font-family: ‘Open Sans’;
+        font-weight: 700;
+        color: #2F3841;
+       }
+       .Actionn{
+        font-size: 14px;
+        font-family: ‘Open Sans’;
+        font-weight: 600;
+        color: #E44C4C;
+        cursor: pointer;
+        border-bottom: 1px solid #E44C4C;
+
+      
+       }
+   </style>
+
+   <style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      color: rgb(0, 0, 0);
+      font-size: 1.1rem;
+    }
+    
+    #customers td, #customers th {
+      border: 2px solid rgb(20, 4, 4);
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(odd){background-color: hsl(0, 4%, 86%);}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+     
+    }
+    </style>
+  
+{% endblock body%}
